@@ -17,7 +17,7 @@ class BlagueFactory extends Factory
     public function definition()
     {
         return [
-            'image' => $this->faker->imageUrl(640,480, $this->faker->word(2,true)),
+            'image' => $this->faker->imageUrl(640,480, $this->faker->word(2,true),true),
             'title' => $this->faker->sentence(3),
             'text' => $this->faker->text(),
             'user' => $this->faker->name()
