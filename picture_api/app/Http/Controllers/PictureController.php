@@ -25,7 +25,10 @@ class PictureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Picture::create($request->all())){
+            return "New picture";
+        };
+        // return $request;
     }
 
     /**
@@ -36,7 +39,7 @@ class PictureController extends Controller
      */
     public function show(Picture $picture)
     {
-        //
+        
     }
 
     /**
