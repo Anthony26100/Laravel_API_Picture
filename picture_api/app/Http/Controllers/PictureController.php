@@ -38,8 +38,9 @@ class PictureController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Picture $picture)
-    {
-        
+    {   
+
+        return $picture;
     }
 
     /**
@@ -49,6 +50,12 @@ class PictureController extends Controller
      * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
+    public function update(Request $request, Picture $picture)
+    {
+        if($picture->update($request->all())){
+            return "Picture modifier avec succes !";
+        };
+    }
 
 
     /**
