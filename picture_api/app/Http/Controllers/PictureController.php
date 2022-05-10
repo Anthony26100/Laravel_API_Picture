@@ -12,9 +12,15 @@ class PictureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return Picture::all();
+    public function index(Request $request)
+    {   
+        $page = $request->has('page') ? $request->get('page') : 1;
+        $limit = $request->has('limit') ? $request->get('limit') : 10;
+        $offset=(($page-1)*$limit);
+        return Picture::orderBy('updated_at','Asc')
+        ->limit($limit)
+        ->offset($offset)
+        ->get();
     }
 
     /**
