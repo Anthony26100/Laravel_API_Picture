@@ -49,10 +49,7 @@ class PictureController extends Controller
      * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Picture $picture)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -62,6 +59,8 @@ class PictureController extends Controller
      */
     public function destroy(Picture $picture)
     {
-        //
+        if($picture->delete()){
+            return "picture supprimer";
+        };
     }
 }
